@@ -5,7 +5,7 @@ const sentences = [
     "If I say ' A snake slithers in the grass , ' what noun is the subject ?",
     "The direct object is the target of the action in a sentence .",
     "In ' Jenny races Jack to the finish|ADJ line , ' which noun is the direct object ?",
-    "Some verbs can take direct objects ; others cannot .",
+    "Some|ADJ verbs can take direct objects ; others cannot .",
     "A verb that|CONJ can take a direct object is called transitive , while|CONJ a verb that can't is known as intransitive .",
     "' Kick|N ' is an example of a transitive verb . I can say , ' I kick my sister , ' where sister is the direct object .",
     "' Arrive|N ' is an intransitive verb . If I say , ' I arrive , ' it doesn't make sense to add an object to the sentence .",

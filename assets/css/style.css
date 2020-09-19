@@ -36,6 +36,21 @@ li {
     margin-right: 5px;
 }
 
+section {
+    max-height: 70vh;
+    overflow: auto;
+}
+
+#title-section {
+    height: 10vh;
+    min-height: 20px;
+}
+
+#info-section {
+    height: 20vh;
+    min-height: 60px;
+}
+
 .left {
     float: left;
 }
