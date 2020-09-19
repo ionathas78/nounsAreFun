@@ -1,7 +1,44 @@
-let sentences = [
-    "This.pron sentence.n is.v a.art test.n sentence.n .",
-    "Every.n dog.n has.v his.pron day.n ."
+const separator = "|";
+const wordTypes = [
+    {
+        type: "adjective",
+        token: "ADJ"
+    },
+    {
+        type: "adverb",
+        token: "ADV"
+    },
+    {
+        type: "article",
+        token: "ART"
+    },
+    {
+        type: "conjunction",
+        token: "CONJ"
+    },
+    {
+        type: "noun",
+        token: "N"
+    },
+    {
+        type: "preposition",
+        token: "PREP"
+    },
+    {
+        type: "pronoun",
+        token: "PRON"
+    },
+    {
+        type: "punctuation",
+        token: "PUNC"
+    },
+    {
+        type: "verb",
+        token: "V"
+    }
 ];
+
+
 
 let spans = document.querySelectorAll("span");
 let spansArray = Array.from(spans);
@@ -45,40 +82,37 @@ function addListItem(sentenceIn) {
 
         let logEntry = currentWord + ": ";
 
-        if (currentWord.length == 1) {
+        if (currentWord === null || currentWord == "") {
+            currentWord = "";
+            currentType = "";
+
+        } else if (currentWord.length == 1 && !(currentWord.toLowerCase() == "a" || currentWord.toLowerCase() == "i")) {
             currentType = "punctuation";
+
         } else {
             let separatorPos = currentWord.indexOf(".");
-            let typeToken = currentWord.substring(separatorPos + 1);
-            currentWord = currentWord.substr(0, separatorPos);
+            let typeToken = null;
 
-            switch (typeToken.toUpperCase()) {
-                case "N":
-                    currentType = "noun";
+            if (separatorPos > -1) {
+                typeToken = currentWord.substring(separatorPos + 1).toUpperCase();
+                currentWord = currentWord.substr(0, separatorPos);
+                
+            } else {
+                for (const w of wordList) {
+                    if (currentWord.toLowerCase() == w.word) {
+                        typeToken = w.type;
+                        break;
+                    }
+                }
+            }
+
+            console.log(typeToken);
+            for (const t of wordTypes) {
+                // console.log(t);
+                if (typeToken == t.token) {
+                    currentType = t.type;
                     break;
-                case "V":
-                    currentType = "verb";
-                    break;
-                case "PREP":
-                    currentType = "preposition";
-                    break;
-                case "PRON":
-                    currentType = "pronoun";
-                    break;
-                case "ADJ":
-                    currentType = "adjective";
-                    break;
-                case "ADV":
-                    currentType = "adverb";
-                    break;
-                case "CONJ":
-                    currentType = "conjunction";
-                    break;
-                case "ART":
-                    currentType = "article";
-                    break;
-                default:
-                    currentType = "";
+                }
             }
         }
 
