@@ -5,7 +5,255 @@ const wordList = [
     },
 
     {
+        word: "action",
+        type: "N"
+    },
+    {
+        word: "actor",
+        type: "N"
+    },
+    {
+        word: "add",
+        type: "V"
+    },
+    {
+        word: "appears",
+        type: "V"
+    },
+    {
+        word: "are",
+        type: "V"
+    },
+    {
+        word: "arrive",
+        type: "V"
+    },
+    {
+        word: "ball",
+        type: "N"
+    },
+    {
+        word: "beginning",
+        type: "N"
+    },
+    {
+        word: "called",
+        type: "V"
+    },
+    {
+        word: "can",
+        type: "V"
+    },
+    {
+        word: "can't",
+        type: "V"
+    },
+    {
+        word: "cannot",
+        type: "V"
+    },
+    {
+        word: "day",
+        type: "N"
+    },
+    {
+        word: "describes",
+        type: "V"
+    },
+    {
+        word: "dinner",
+        type: "N"
+    },
+    {
+        word: "direct",
+        type: "ADJ"
+    },
+    {
+        word: "doesn't",
+        type: "V"
+    },
+    {
+        word: "dog",
+        type: "N"
+    },
+    {
+        word: "example",
+        type: "N"
+    },
+    {
+        word: "expand",
+        type: "V"
+    },
+    {
+        word: "extremely",
+        type: "ADV"
+    },
+    {
+        word: "every",
+        type: "ADJ"
+    },
+    {
+        word: "finish",
+        type: "V"
+    },
+    {
+        word: "grass",
+        type: "N"
+    },
+    {
+        word: "group",
+        type: "N"
+    },
+    {
+        word: "has",
+        type: "V"
+    },
+    {
+        word: "how",
+        type: "ADV"
+    },
+    {
+        word: "its",
+        type: "ADJ"
+    },
+    {
+        word: "identifying",
+        type: "ADJ"
+    },
+    {
+        word: "indirect",
+        type: "ADJ"
+    },
+    {
+        word: "intransitive",
+        type: "ADJ"
+    },
+    {
+        word: "is",
+        type: "V"
+    },
+    {
+        word: "jack",
+        type: "N"
+    },
+    {
+        word: "jenny",
+        type: "N"
+    },
+    {
+        word: "kelly",
+        type: "N"
+    },
+    {
+        word: "kick",
+        type: "V"
+    },
+    {
+        word: "known",
+        type: "V"
+    },
+    {
+        word: "line",
+        type: "N"
+    },
+    {
+        word: "make",
+        type: "V"
+    },
+    {
+        word: "means",
+        type: "V"
+    },
+    {
+        word: "noun",
+        type: "N"
+    },
+    {
+        word: "nouns",
+        type: "N"
+    },
+    {
+        word: "object",
+        type: "N"
+    },
+    {
+        word: "objects",
+        type: "N"
+    },
+    {
+        word: "often",
+        type: "ADV"
+    },
+    {
+        word: "performs",
+        type: "V"
+    },
+    {
+        word: "person",
+        type: "N"
+    },
+    {
+        word: "phrase",
+        type: "N"
+    },
+    {
+        word: "place",
+        type: "N"
+    },
+    {
+        word: "preposition",
+        type: "N"
+    },
+    {
+        word: "prepositional",
+        type: "ADJ"
+    },
+    {
+        word: "races",
+        type: "V"
+    },
+    {
+        word: "receives",
+        type: "V"
+    },
+    {
+        word: "say",
+        type: "V"
+    },
+    {
+        word: "sense",
+        type: "N"
+    },
+    {
         word: "sentence",
+        type: "N"
+    },
+    {
+        word: "signifies",
+        type: "V"
+    },
+    {
+        word: "sister",
+        type: "N"
+    },
+    {
+        word: "slithers",
+        type: "V"
+    },
+    {
+        word: "snake",
+        type: "N"
+    },
+    {
+        word: "subject",
+        type: "N"
+    },
+    {
+        word: "take",
+        type: "V"
+    },
+    {
+        word: "target",
         type: "N"
     },
     {
@@ -13,28 +261,66 @@ const wordList = [
         type: "N"
     },
     {
-        word: "every",
+        word: "thing",
+        type: "N"
+    },
+    {
+        word: "throws",
+        type: "V"
+    },
+    {
+        word: "transitive",
         type: "ADJ"
     },
     {
-        word: "dog",
+        word: "useful",
+        type: "ADJ"
+    },
+    {
+        word: "verb",
         type: "N"
     },
     {
-        word: "day",
+        word: "verbs",
+        type: "N"
+    },
+    {
+        word: "use",
+        type: "V"
+    },
+    {
+        word: "uses",
+        type: "V"
+    },
+    {
+        word: "went",
+        type: "V"
+    },
+    {
+        word: "when",
+        type: "ADV"
+    },
+    {
+        word: "where",
+        type: "ADV"
+    },
+    {
+        word: "why",
+        type: "N"
+    },
+    {
+        word: "word",
+        type: "N"
+    },
+    {
+        word: "words",
+        type: "N"
+    },
+    {
+        word: "zoo",
         type: "N"
     },
 
-    {
-        word: "has",
-        type: "V"
-    },
-    {
-        word: "is",
-        type: "V"
-    },
-
-    
     {
         word: "a",
         type: "ART"
@@ -57,6 +343,26 @@ const wordList = [
     },
     {
         word: "my",
+        type: "PRON"
+    },
+    {
+        word: "we",
+        type: "PRON"
+    },
+    {
+        word: "us",
+        type: "PRON"
+    },
+    {
+        word: "our",
+        type: "PRON"
+    },
+    {
+        word: "you",
+        type: "PRON"
+    },
+    {
+        word: "your",
         type: "PRON"
     },
     {
@@ -104,6 +410,22 @@ const wordList = [
         type: "PRON"
     },
     {
+        word: "another",
+        type: "PRON"
+    },
+    {
+        word: "other",
+        type: "PRON"
+    },
+    {
+        word: "others",
+        type: "PRON"
+    },
+    {
+        word: "some",
+        type: "PRON"
+    },
+    {
         word: "this",
         type: "PRON"
     },
@@ -120,11 +442,27 @@ const wordList = [
         type: "PRON"
     },
     {
+        word: "which",
+        type: "PRON"
+    },
+    {
+        word: "who",
+        type: "PRON"
+    },
+    {
+        word: "what",
+        type: "PRON"
+    },
+    {
         word: "and",
         type: "CONJ"
     },
     {
         word: "but",
+        type: "CONJ"
+    },
+    {
+        word: "if",
         type: "CONJ"
     },
     {

@@ -36,58 +36,69 @@ li {
     margin-right: 5px;
 }
 
-.noun:hover, 
-.verb:hover, 
-.pronoun:hover, 
-.adjective:hover, 
-.adverb:hover, 
-.preposition:hover, 
-.conjunction:hover, 
-.article:hover, 
-.punctuation:hover
- {
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.spacer {
+    height: 20px;
+}
+
+.active {
     font-weight: bold;
     text-decoration: underline;
 }
 
-.noun:hover {
+.noun.active {
     color: skyblue;
 }
 
-.verb:hover {
-    color: red;
+.verb.active {
+    color: blueviolet;
 }
 
-.pronoun:hover {
+.pronoun.active {
     color: goldenrod;
 }
 
-.adjective:hover {
+.adjective.active {
     color: lightgreen;
 }
 
-.adverb:hover {
+.adverb.active {
     color: cyan;
 }
 
-.preposition:hover {
+.preposition.active {
     color: magenta;
 }
 
-.conjunction:hover {
+.conjunction.active {
     color: orange;
 }
 
-.article:hover {
+.article.active {
+    color: brown;
+}
+
+.punctuation.active {
     color: grey;
 }
 
-.punctuation:hover {
-    color: blueviolet;
+.correct {
+    color: yellow;  
+}
+
+.wrong {
+    color: red;
 }
 
 .info-section {
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
-    color: #ddd;
+    color: #bbb;
 }
