@@ -1,5 +1,5 @@
 const separator = "|";
-const targetType = "verb";
+const targetType = "noun";
 
 const wordTypes = [
     {

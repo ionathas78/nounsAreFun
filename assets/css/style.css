@@ -4,6 +4,8 @@
     color: #eee;
     font-weight: normal;
     background-color: black;
+    max-width: 100vw;
+    word-wrap: break-word;
 }
 
 h1 {
