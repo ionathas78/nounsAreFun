@@ -68,7 +68,7 @@ document.addEventListener("click", (event) => {
 function clickSpan (target) {
     let spanClass = target.className;
     let spanText = target.textContent;
-    let message;
+    let message, spanWord;
 
     if (spanClass.indexOf("word") > -1) {
         spanClass = spanClass.replace("word", "").trim();
@@ -84,7 +84,6 @@ function clickSpan (target) {
         return;
     }
 
-
     resetActive();
     setActive(target);
 
@@ -92,19 +91,30 @@ function clickSpan (target) {
         target.className += " correct";
         currentCount++;
         spanCount.textContent = currentCount;
-        message = "Correct!"
+        message = "Correct,"
 
     } else {
         target.className += " wrong";
-        message = "Oops!"
+        message = "Oops,"
     }
 
-
-    message += " The word '" + spanText + "' is a";
+    message += " '" + spanText + "' is a";
     if ("aeiou".indexOf(spanClass.substr(0,1).toLowerCase()) > -1) {
         message += "n";
     }
-    message += " " + spanClass;
+    message += " " + spanClass + ".";
+
+    spanWord = getWordFromList(spanText);
+    if (spanWord && spanWord.definition) {
+        message += " " + spanText.substr(0, 1).toUpperCase() + spanText.substr(1).toLowerCase() + ": ";
+
+        if (spanWord.data) {
+            message += " (" + spanWord.data + ")";
+        }
+        if (spanWord.definition) {
+            message += " " + spanWord.definition;
+        }
+    }
 
     infoBar.textContent = message;
 }
@@ -151,11 +161,10 @@ function addListItem(sentenceIn) {
                 currentWord = currentWord.substr(0, separatorPos);
                 
             } else {
-                for (const w of wordList) {
-                    if (currentWord.toLowerCase() == w.word) {
-                        typeToken = w.type;
-                        break;
-                    }
+                let wordFromList = getWordFromList(currentWord);
+                console.log(currentWord, wordFromList);
+                if (wordFromList) {
+                    typeToken = wordFromList.type;
                 }
             }
 
@@ -179,4 +188,18 @@ function addListItem(sentenceIn) {
 
     spanTotal.textContent = totalCount;
     spansSection.appendChild(itemReturn);
+}
+
+function getWordFromList (targetWord) {
+    let returnString = null;
+    let lowerWord = targetWord.toLowerCase();
+
+    for (const w of wordList) {
+        if (lowerWord == w.word) {
+            returnString = w;
+            break;
+        }
+    }
+
+    return returnString;
 }
