@@ -1,5 +1,4 @@
 const separator = "|";
-const targetType = "noun";
 
 const wordTypes = [
     {
@@ -40,30 +39,43 @@ const wordTypes = [
     }
 ];
 
+let targetType = "noun";
 let spans = document.querySelectorAll("span");
 let spansArray = Array.from(spans);
 let infoBar = document.getElementById("info-bar");
 let spansSection = document.getElementById("list-section");
-let spanType = document.getElementById("find-type");
+let selType = document.getElementById("find-type");
 let spanCount = document.getElementById("find-count");
 let spanTotal = document.getElementById("find-total");
 
 let currentCount = 0;
 let totalCount = 0;
 
-spanType.textContent = targetType;
-spanType.className = targetType + " active";
-spanCount.textContent = currentCount;
-
-sentences.forEach(currentSentence => {
-    addListItem(currentSentence);
-})
+setupSection();
 
 document.addEventListener("click", (event) => {
     if (spansArray.includes(event.target)) {
         clickSpan(event.target);
     }
 });
+
+selType.addEventListener("change", event => {
+    clearSection();
+    setupSection();
+})
+
+function setupSection () {
+    targetType = selType.value;
+    console.log(targetType);
+    selType.className = targetType + " active";
+    spanCount.textContent = currentCount;
+    currentCount = 0;
+    totalCount = 0;
+    
+    sentences.forEach(currentSentence => {
+        addListItem(currentSentence);
+    })    
+}
 
 function clickSpan (target) {
     let spanClass = target.className;
@@ -124,7 +136,7 @@ function resetActive () {
     let activeArray = Array.from(activeTags);
 
     activeArray.forEach(tag => {
-        if (tag !== spanType) {
+        if (tag !== selType) {
             tag.className = tag.className.replace("active", "").trim();
         }
     })
@@ -134,6 +146,13 @@ function setActive (tagToSet) {
     if (tagToSet.className.indexOf("active") < 0) {
         tagToSet.className = tagToSet.className + " active";
     }
+}
+
+function clearSection() {
+    while (spansSection.hasChildNodes()) {
+        spansSection.removeChild(spansSection.lastChild)
+    }
+    infoBar.textContent = "";
 }
 
 function addListItem(sentenceIn) {
@@ -162,7 +181,7 @@ function addListItem(sentenceIn) {
                 
             } else {
                 let wordFromList = getWordFromList(currentWord);
-                console.log(currentWord, wordFromList);
+                //  console.log(currentWord, wordFromList);
                 if (wordFromList) {
                     typeToken = wordFromList.type;
                 }
